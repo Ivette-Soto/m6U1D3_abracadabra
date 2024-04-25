@@ -46,6 +46,17 @@ const app = express()
     });
 
 // 5.-
+    app.get("/abracadabra/conejo/:n", (req, res)=>{
+        const userNumber = req.params.n
+        const rabbitNumber = Math.floor(Math.random()*3)+1;
+
+        if (rabbitNumber == userNumber){
+            res.sendFile(__dirname + "/assets/conejito.jpg")
+        } else {
+            res.sendFile(__dirname + "/assets/who.jpeg")
+        }
+    });
+
 // 6.-
     app.get("*", (req, res)=>{
         res.send("<center><h1>This page does not exist...</h1></center>")
