@@ -29,7 +29,9 @@ const app = express()
 // POSSIBLE STUDY RESOURCE https://github.com/expressjs/express/blob/master/examples/params/index.js
 
 // 4.- /abracadabra/juego/:usuario 
-
+    app.get("abracadabra/game/:user", (req, res)=>{
+        res.sendFile(__dirname + "index.html")
+    });
 
 // 5.-
 // 6.-
