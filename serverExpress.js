@@ -41,8 +41,8 @@ const app = express()
         });
 
         
-    app.get("abracadabra/game/:user", (req, res)=>{
-        res.sendFile(__dirname + "index.html")
+    app.get("/abracadabra/game/:user", (req, res)=>{
+        res.sendFile(__dirname + "/index.html")
     });
 
 // 5.-
