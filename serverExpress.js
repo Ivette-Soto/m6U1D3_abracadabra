@@ -25,10 +25,22 @@ const app = express()
         res.send(users)
         });       
 
-    //     render 👉🏻 JSON 
+    //rendered as 👉🏻 JSON 
 // POSSIBLE STUDY RESOURCE https://github.com/expressjs/express/blob/master/examples/params/index.js
 
 // 4.- /abracadabra/juego/:usuario 
+        app.use("/abracadabra/game/:user", (req, res, next)=>{
+            const userReq = req.params.user
+
+            if (users.users.find(data => data == userReq)){
+                next()
+            } else {
+                res.sendFile(__dirname + "/assets/who.jpeg")
+            }
+                
+        });
+
+        
     app.get("abracadabra/game/:user", (req, res)=>{
         res.sendFile(__dirname + "index.html")
     });
