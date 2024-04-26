@@ -8,7 +8,8 @@ const app = express()
 // 2.- 
     app.use(express.static("assets"));
 
-// 3.- ಥ_ಥ  
+// 3.- ಥ_ಥ     Hints at RESOURCE https://github.com/expressjs/express/blob/master/examples/params/index.js
+
     const users = {
         "users": [
             "Juan",
@@ -26,7 +27,6 @@ const app = express()
         });       
 
     //rendered as 👉🏻 JSON 
-// POSSIBLE STUDY RESOURCE https://github.com/expressjs/express/blob/master/examples/params/index.js
 
 // 4.- /abracadabra/juego/:usuario 
         app.use("/abracadabra/game/:user", (req, res, next)=>{
@@ -53,7 +53,7 @@ const app = express()
         if (rabbitNumber == userNumber){
             res.sendFile(__dirname + "/assets/conejito.jpg")
         } else {
-            res.sendFile(__dirname + "/assets/who.jpeg")
+            res.sendFile(__dirname + "/assets/voldemort.jpg")
         }
     });
 
@@ -61,5 +61,3 @@ const app = express()
     app.get("*", (req, res)=>{
         res.send("<center><h1>This page does not exist...</h1></center>")
         })
-
-// “”
